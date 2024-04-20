@@ -24,6 +24,6 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v5
               with:
-                  python-version: ".python-version"
+                  python-version-file: ".python-version"
             - run: make dev-dependencies
             - run: make lint
