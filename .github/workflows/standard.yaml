@@ -1,0 +1,29 @@
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - "*"
+        paths-ignore:
+            - "**/*.md"
+
+    pull_request:
+        branches:
+            - "!dependabot/*"
+        paths-ignore:
+            - "**/*.md"
+    workflow_dispatch:
+
+name: Standard
+
+jobs:
+    ci:
+        name: CI - Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: ".python-version"
+            - run: make dev-dependencies
+            - run: make lint
