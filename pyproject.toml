@@ -1,0 +1,111 @@
+[tool.poetry]
+name = "to-do-list-hexagonal"
+version = "0.1.0"
+description = ""
+authors = ["alexa2me <senhorita.alexandra@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^2.7.0"
+uvicorn = "^0.29.0"
+alembic = "^1.13.1"
+fastapi = "^0.110.1"
+pydantic-settings = "^2.2.1"
+pymysql = "^1.1.0"
+python-dotenv = "^1.0.1"
+sqlalchemy-utils = "^0.41.2"
+sqlacodegen = "^2.3.0.post1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.7"
+black = "^24.4.0"
+isort = "^5.13.2"
+mypy = "^1.9.0"
+
+[tool.black]
+line-length = 79
+target-version = [ "py38" ]
+include = "\\.pyi?$"
+exclude = """
+(
+  /(
+      \\.eggs         # exclude a few common directories in the
+    | \\.git          # root of the project
+    | \\.hg
+    | \\.mypy_cache
+    | \\.tox
+    | \\.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | migrations
+    | version
+    | src/jerome_api/adapters/outbound/db/alembic
+  )
+)
+"""
+
+[tool.isort]
+line_length = 79
+known_first_party = "src"
+known_third_party = "fastapi,structlog"
+multi_line_output = 3
+use_parentheses = true
+include_trailing_comma = true
+skip_glob = [ "*migrations*" ]
+
+[tool.coverage.run]
+omit = [
+  "*tests*",
+  "*settings*",
+  "*migrations*",
+  "*interface*",
+  "poetry_ci.py"
+]
+branch = true
+
+[tool.coverage.report]
+precision = 2
+
+[tool.ruff]
+lint.select = [ "E", "W", "F", "C90", "UP" ]
+lint.ignore = [ ]
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "_pypackages_",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
+  "/versions/"
+]
+line-length = 79
+lint.dummy-variable-rgx = "^([a-zA-Z0-9_]*[a-zA-Z0-9]+?)$"
+target-version = "py311"
+
+  [tool.ruff.lint.mccabe]
+  max-complexity = 10
+
+  [tool.ruff.lint.per-file-ignores]
+  "src/jerome_api/adapters/outbound/db/alembic/env.py" = [ "F401" ]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
