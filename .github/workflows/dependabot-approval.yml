@@ -20,11 +20,19 @@ jobs:
 
         name: CI
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: ".python-version"
+                  python-version-file: ".python-version"
+            - uses: actions/cache@v4
+              id: cache
+              with:
+                  path: /opt/hostedtoolcache/Python/
+                  key: poetry-${{ hashFiles('**/poetry.lock') }}
+                  restore-keys: poetry-
             - run: make dev-dependencies
+              env: 
+                  POETRY_VIRTUALENVS_CREATE: false
             - run: make lint
 
     approve_on_success:
