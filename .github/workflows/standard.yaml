@@ -21,7 +21,7 @@ jobs:
         name: CI - Build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
                   python-version-file: ".python-version"
@@ -32,4 +32,6 @@ jobs:
                   key: poetry-${{ hashFiles('**/poetry.lock') }}
                   restore-keys: poetry-
             - run: make dev-dependencies
+              env: 
+                  POETRY_VIRTUALENVS_CREATE: false
             - run: make lint
