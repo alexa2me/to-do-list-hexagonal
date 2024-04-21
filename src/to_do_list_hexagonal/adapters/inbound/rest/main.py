@@ -1,6 +1,6 @@
-from adapters.settings import settings
 from fastapi import FastAPI
 
+from to_do_list_hexagonal.adapters import settings
 from to_do_list_hexagonal.adapters.inbound.rest.v1.controllers.ping import (
     router as ping_router,
 )
