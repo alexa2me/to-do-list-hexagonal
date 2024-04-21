@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "src/to_do_list_hexagonal/adapters/inbound/rest/v1/controllers/*.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "src/to_do_list_hexagonal/adapters/inbound/rest/v1/controllers/*.py"
+        }
+    ]
+  }
