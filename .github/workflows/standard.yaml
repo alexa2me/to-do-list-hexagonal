@@ -9,7 +9,7 @@ on:
 
     pull_request:
         branches:
-            - "!dependabot/*"
+            - "*"
         paths-ignore:
             - "**/*.md"
     workflow_dispatch:
@@ -20,6 +20,7 @@ jobs:
     ci:
         name: CI - Build
         runs-on: ubuntu-latest
+        if: github.actor != 'dependabot[bot]'
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5

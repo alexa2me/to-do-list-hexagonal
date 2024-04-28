@@ -32,3 +32,26 @@ class TaskRepository:
         self.session.commit()
 
         return self._build_db_to_task_model(task_db)
+
+    def get_all(self) -> list[TaskModel]:
+        tasks_db = self.session.query(Task).all()
+        return [self._build_db_to_task_model(task_db) for task_db in tasks_db]
+
+    def get_by_id(self, task_id: str) -> TaskModel:
+        task_db = self.session.query(Task).filter(Task.id == task_id).first()
+        return self._build_db_to_task_model(task_db)
+
+    def update(self, task_id: str, entity: TaskModel) -> TaskModel:
+        task_db = self.session.query(Task).filter(Task.id == task_id).first()
+        task_db.title = entity.title
+        task_db.description = entity.description
+        task_db.status = entity.status
+
+        self.session.commit()
+
+        return self._build_db_to_task_model(task_db)
+
+    def delete(self, task_id: str) -> None:
+        task_db = self.session.query(Task).filter(Task.id == task_id).first()
+        self.session.delete(task_db)
+        self.session.commit()
