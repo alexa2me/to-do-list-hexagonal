@@ -36,7 +36,7 @@ jobs:
               with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
             - name: Approve pull request if checks pass
-              run: gh pr review --approve "$pr_url"
+              run: gh pr review --approve "$PR_URL"
               env:
-                pr_url: ${{ github.event.pull_request.html_url }}
-                github-token: ${{ secrets.GITHUB_TOKEN }}
+                PR_URL: ${{ github.event.pull_request.html_url }}
+                GH_TOKEN: ${{ github.token }}
