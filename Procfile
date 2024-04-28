@@ -1,0 +1,1 @@
+web: uvicorn to_do_list_hexagonal.adapters.inbound.rest.main:app --host="0.0.0.0" --port=8000
