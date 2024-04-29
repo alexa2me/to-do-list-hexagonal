@@ -22,6 +22,21 @@ from to_do_list_hexagonal.domain.use_cases.tasks.update import (
 router = APIRouter()
 
 
+@router.get(
+    "/v1/tasks",
+    status_code=200,
+    tags=["Task"],
+)
+def get_tasks(
+    db_session: Session = Depends(get_session),
+):
+    try:
+        use_case = GetAllTasksUseCase(db_session)
+        return use_case.get_all()
+    except Exception as e:
+        return {"error": str(e)}
+
+
 @router.post(
     "/v1/task",
     status_code=201,
@@ -34,21 +49,6 @@ def create_task(
     try:
         use_case = CreateTaskUseCase(db_session)
         return use_case.create(task_data=task_data)
-    except Exception as e:
-        return {"error": str(e)}
-
-
-@router.get(
-    "/v1/tasks",
-    status_code=200,
-    tags=["Task"],
-)
-def get_tasks(
-    db_session: Session = Depends(get_session),
-):
-    try:
-        use_case = GetAllTasksUseCase(db_session)
-        return use_case.get_all()
     except Exception as e:
         return {"error": str(e)}
 
