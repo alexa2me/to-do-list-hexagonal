@@ -12,7 +12,7 @@ from to_do_list_hexagonal.adapters.settings import settings
 def get_application() -> FastAPI:
     application = FastAPI(title=settings.PROJECT_NAME)
 
-    application.include_router(task_router)
+    # application.include_router(task_router)
     application.include_router(ping_router)
 
     return application
