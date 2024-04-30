@@ -3,9 +3,6 @@ from fastapi import FastAPI
 from to_do_list_hexagonal.adapters.inbound.rest.v1.controllers.ping import (
     router as ping_router,
 )
-from to_do_list_hexagonal.adapters.inbound.rest.v1.controllers.task import (
-    router as task_router,
-)
 from to_do_list_hexagonal.adapters.settings import settings
 
 
