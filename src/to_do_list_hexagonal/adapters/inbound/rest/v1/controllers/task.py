@@ -3,9 +3,6 @@ from sqlalchemy.orm import Session
 
 from to_do_list_hexagonal.adapters.outbound.db.database import get_session
 from to_do_list_hexagonal.domain.ports.inbound.task.dtos import CreateTaskDto
-from to_do_list_hexagonal.domain.use_cases.tasks.create import (
-    CreateTaskUseCase,
-)
 from to_do_list_hexagonal.domain.use_cases.tasks.delete import (
     DeleteTaskUseCase,
 )
