@@ -15,8 +15,10 @@ class BaseSettings(PydanticBaseSettings):
     DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
     DB_SCHEMA: str = os.getenv("DB_SCHEMA", "")
     DB_PORT: str = os.getenv("DB_PORT", "")
+    DB_SSL_CA: str = os.getenv("DB_SSL_CA", "")
     DB_URL: str = (
         f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_SCHEMA}"
+        f"?ssl_ca={DB_SSL_CA}"
     )
 
     class Config:
