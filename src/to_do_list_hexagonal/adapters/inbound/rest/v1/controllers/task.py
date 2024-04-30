@@ -39,6 +39,21 @@ def create_task(
 
 
 @router.get(
+    "/v1/tasks",
+    status_code=200,
+    tags=["Task"],
+)
+def get_tasks(
+    db_session: Session = Depends(get_session),
+):
+    try:
+        use_case = GetAllTasksUseCase(db_session)
+        return use_case.get_all()
+    except Exception as e:
+        return {"error": str(e)}
+
+
+@router.get(
     "/v1/task/{task_id}",
     status_code=200,
     tags=["Task"],
