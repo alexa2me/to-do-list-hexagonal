@@ -3,7 +3,7 @@ from uuid import uuid4
 
 from sqlalchemy import Column, DateTime, String
 
-from to_do_list_hexagonal.adapters.outbound.db.repositories.custom_base import (  # noqa
+from to_do_list_hex.adapters.outbound.db.repositories.custom_base import (  # noqa
     Base,
 )
 

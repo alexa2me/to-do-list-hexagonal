@@ -1,23 +1,13 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from to_do_list_hexagonal.adapters.outbound.db.database import get_session
-from to_do_list_hexagonal.domain.ports.inbound.task.dtos import CreateTaskDto
-from to_do_list_hexagonal.domain.use_cases.tasks.create import (
-    CreateTaskUseCase,
-)
-from to_do_list_hexagonal.domain.use_cases.tasks.delete import (
-    DeleteTaskUseCase,
-)
-from to_do_list_hexagonal.domain.use_cases.tasks.get_all import (
-    GetAllTasksUseCase,
-)
-from to_do_list_hexagonal.domain.use_cases.tasks.get_by_id import (
-    GetTaskByIdUseCase,
-)
-from to_do_list_hexagonal.domain.use_cases.tasks.update import (
-    UpdateTaskUseCase,
-)
+from to_do_list_hex.adapters.outbound.db.database import get_session
+from to_do_list_hex.domain.ports.inbound.task.dtos import CreateTaskDto
+from to_do_list_hex.domain.use_cases.tasks.create import CreateTaskUseCase
+from to_do_list_hex.domain.use_cases.tasks.delete import DeleteTaskUseCase
+from to_do_list_hex.domain.use_cases.tasks.get_all import GetAllTasksUseCase
+from to_do_list_hex.domain.use_cases.tasks.get_by_id import GetTaskByIdUseCase
+from to_do_list_hex.domain.use_cases.tasks.update import UpdateTaskUseCase
 
 router = APIRouter()
 

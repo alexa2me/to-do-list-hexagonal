@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from to_do_list_hexagonal.adapters.outbound.db.repositories.task import (
+from to_do_list_hex.adapters.outbound.db.repositories.task import (
     TaskRepository,
 )
 

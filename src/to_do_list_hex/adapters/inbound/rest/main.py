@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 
-from to_do_list_hexagonal.adapters.inbound.rest.v1.controllers.ping import (
+from to_do_list_hex.adapters.inbound.rest.v1.controllers.ping import (
     router as ping_router,
 )
-from to_do_list_hexagonal.adapters.inbound.rest.v1.controllers.task import (
+from to_do_list_hex.adapters.inbound.rest.v1.controllers.task import (
     router as task_router,
 )
-from to_do_list_hexagonal.adapters.settings import settings
+from to_do_list_hex.adapters.settings import settings
 
 
 def get_application() -> FastAPI:

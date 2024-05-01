@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "to-do-list-hexagonal"
+name = "to-do-list-hex"
 version = "0.1.0"
 description = ""
 authors = ["alexa2me <senhorita.alexandra@hotmail.com>"]
