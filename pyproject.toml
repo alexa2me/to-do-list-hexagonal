@@ -20,7 +20,7 @@ sqlacodegen = "^2.3.0.post1"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.2"
-black = "^24.4.0"
+black = "^24.4.2"
 isort = "^5.13.2"
 mypy = "^1.10.0"
 
