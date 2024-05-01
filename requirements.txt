@@ -56,7 +56,7 @@ SecretStorage==3.3.3
 shellingham==1.5.4
 sniffio==1.3.1
 sqlacodegen==2.3.0.post1
-SQLAlchemy==1.4.52
+SQLAlchemy==2.0.29
 SQLAlchemy-Utils==0.41.2
 starlette==0.37.2
 -e git+https://github.com/alexa2me/to-do-list-hexagonal.git@6ff6f114d1f093393d3de265d175c5780724e004#egg=to_do_list_hexagonal
