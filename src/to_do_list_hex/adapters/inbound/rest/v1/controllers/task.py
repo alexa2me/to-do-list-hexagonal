@@ -44,7 +44,7 @@ def get_tasks(
 
 
 @router.get(
-    "/v1/task_get_by_id/{task_id}",
+    "/v1/task/{task_id}",
     status_code=200,
     tags=["Task"],
 )
