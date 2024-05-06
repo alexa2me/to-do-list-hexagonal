@@ -1,1 +1,1 @@
-# to-do-list-hex
+# to-do-list-hexagonal
