@@ -1,21 +1,3 @@
-### CLOUD REQUESTS
-
-### PING
-GET https://raspy-ostrich-ale-alcantara.koyeb.app/
-Content-Type: application/json
-###
-
-### CREATE TASK
-POST https://raspy-ostrich-ale-alcantara.koyeb.app/v1/task
-Content-Type: application/json
-
-{
-    "title": "Another Sunday task",
-    "description": "I don't remember what I have to do",
-    "status": "Pending"
-}
-###
-
 ### LOCAL REQUESTS
 
 ### PING
@@ -28,7 +10,7 @@ POST http://localhost:8000/v1/task
 Content-Type: application/json
 
 {
-    "title": "Another Sunday task",
+    "title": "It's the day",
     "description": "I don't remember what I have to do",
     "status": "Pending"
 }
@@ -50,11 +32,11 @@ Content-Type: application/json
 
 {
   "title": "Ravi",
-  "description": "Nova Description da Ravi",
+  "description": "Uma outra Description da Ravi",
   "status": "pending"
 }
 
 ### DELETE TASK
-DELETE http://localhost:8000/v1/task/bc56e592-b7c4-4ed1-8093-4e40ab125571
+DELETE http://localhost:8000/v1/task/3e58b863-f30f-4dde-9858-46043aa75060
 Content-Type: application/json
 ###
