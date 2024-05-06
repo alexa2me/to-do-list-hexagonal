@@ -1,10 +1,10 @@
 from sqlalchemy.orm import Session
 
-from to_do_list_hex.adapters.outbound.db.repositories.task import (
+from to_do_list_hexagonal.adapters.outbound.db.repositories.task import (
     TaskRepository,
 )
-from to_do_list_hex.domain.entities.task import TaskModel
-from to_do_list_hex.domain.ports.inbound.task.dtos import CreateTaskDto
+from to_do_list_hexagonal.domain.entities.task import TaskModel
+from to_do_list_hexagonal.domain.ports.inbound.task.dtos import CreateTaskDto
 
 
 class UpdateTaskUseCase:

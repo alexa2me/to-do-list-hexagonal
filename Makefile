@@ -1,4 +1,4 @@
-PROJECT_NAME="to_do_list_hex"
+PROJECT_NAME="to_do_list_hexagonalagonal"
 
 ###
 # Dependencies section
@@ -57,7 +57,7 @@ run-dev: ## Run server with developement settings
 # Migration section
 ###
 create-db-migration: ## Create a new migration
-	@alembic -c src/to_do_list_hex/adapters/outbound/db/alembic/alembic.ini revision --autogenerate -m "$(m)"
+	@alembic -c src/to_do_list_hexagonalagonal/adapters/outbound/db/alembic/alembic.ini revision --autogenerate -m "$(m)"
 
 apply-db-migration: ## Apply the migration
-	@alembic -c src/to_do_list_hex/adapters/outbound/db/alembic/alembic.ini upgrade head
+	@alembic -c src/to_do_list_hexagonalagonal/adapters/outbound/db/alembic/alembic.ini upgrade head

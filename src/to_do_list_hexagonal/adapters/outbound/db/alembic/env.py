@@ -3,8 +3,8 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import create_engine
 
-from to_do_list_hex.adapters.outbound.db.models import Base
-from to_do_list_hex.adapters.settings import settings
+from to_do_list_hexagonal.adapters.outbound.db.models import Base
+from to_do_list_hexagonal.adapters.settings import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
