@@ -7,7 +7,7 @@ load_dotenv()
 
 
 class BaseSettings(PydanticBaseSettings):
-    PROJECT_NAME: str = "to_do_list_hexagonalagonal"
+    PROJECT_NAME: str = "to_do_list_hexagonal"
 
     # MySQL
     DB_HOST: str = os.getenv("DB_HOST", "")
