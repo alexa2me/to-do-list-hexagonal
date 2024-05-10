@@ -19,7 +19,7 @@ sqlacodegen = "^2.3.0.post1"
 pipdeptree = "^2.19.1"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.4.2"
+ruff = "^0.4.4"
 black = "^24.4.2"
 isort = "^5.13.2"
 mypy = "^1.10.0"
